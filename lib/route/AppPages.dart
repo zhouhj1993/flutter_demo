@@ -1,8 +1,13 @@
 import 'package:flutter_demo/pages/ButtonPage.dart';
+import 'package:flutter_demo/pages/CheckboxPage.dart';
 import 'package:flutter_demo/pages/DividerPage.dart';
 import 'package:flutter_demo/pages/InputPage.dart';
 import 'package:flutter_demo/pages/LinkPage.dart';
+import 'package:flutter_demo/pages/LoadingPage.dart';
 import 'package:flutter_demo/pages/PickerPage.dart';
+import 'package:flutter_demo/pages/RadioPage.dart';
+import 'package:flutter_demo/pages/SliderPage.dart';
+import 'package:flutter_demo/pages/SwitchPage.dart';
 import 'package:flutter_demo/pages/TabBarPage.dart';
 import 'package:flutter_demo/pages/TabsPage.dart';
 import 'package:flutter_demo/pages/TetxtPage.dart';
@@ -28,28 +33,38 @@ class AppPages {
         routeName: "Divider 分割线",
         page: () => const DividerPage()),
     RouteModel(
-        routeUrl: "/link",
-        routeName: "Link 链接",
-        page: () => const LinkPage()),
+        routeUrl: "/link", routeName: "Link 链接", page: () => const LinkPage()),
     RouteModel(
-        routeUrl: "/text",
-        routeName: "Text 文本",
-        page: () => const TextPage()),
+        routeUrl: "/text", routeName: "Text 文本", page: () => const TextPage()),
     RouteModel(
-        routeUrl: "/tabBar",
-        routeName: "TabBar 标签栏",
-        page: () => TabBarPage()),
+        routeUrl: "/tabBar", routeName: "TabBar 标签栏", page: () => TabBarPage()),
     RouteModel(
-        routeUrl: "/tabs",
-        routeName: "Tabs 选项卡",
-        page: () => TabsPage()),
+        routeUrl: "/tabs", routeName: "Tabs 选项卡", page: () => TabsPage()),
     RouteModel(
-        routeUrl: "/picker",
-        routeName: "Picker 选项器",
-        page: () => PickerPage()),
+        routeUrl: "/picker", routeName: "Picker 选项器", page: () => PickerPage()),
     RouteModel(
         routeUrl: "/input",
         routeName: "Input 输入框",
-        page: () => const InputPage())
+        page: () => const InputPage()),
+    RouteModel(
+        routeUrl: "/switch",
+        routeName: "Switch 开关",
+        page: () => const SwitchPage()),
+    RouteModel(
+        routeUrl: "/slider",
+        routeName: "Slider 滑动选择器",
+        page: () => SliderPage()),
+    RouteModel(
+        routeUrl: "/radio",
+        routeName: "Radio 单选框",
+        page: () => const RadioPage()),
+    RouteModel(
+        routeUrl: "/checkbox",
+        routeName: "checkbox 复选框",
+        page: () => const CheckboxPage()),
+    RouteModel(
+        routeUrl: "/loading",
+        routeName: "Loading 加载",
+        page: () => const LoadingPage())
   ];
 }

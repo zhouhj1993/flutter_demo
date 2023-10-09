@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
               return TDButton(
                   margin: const EdgeInsets.only(left: 12, top: 6, right: 12),
                   isBlock: true,
-                  theme: TDButtonTheme.primary,
+                  theme: TDButtonTheme.light,
+                  type: TDButtonType.outline,
                   text: list[index].routeName,
                   onTap: () {
                     final params = <String, String>{"title": item.routeName};
