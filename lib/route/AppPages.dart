@@ -80,6 +80,6 @@ class AppPages {
     RouteModel(
         routeUrl: "/http",
         routeName: "Http 网络请求",
-        page: () => const HttpPage())
+        page: () => HttpPage())
   ];
 }

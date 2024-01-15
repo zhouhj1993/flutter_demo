@@ -5,7 +5,9 @@ import 'package:get/get.dart' hide Response;
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 class HttpPage extends StatelessWidget {
-  const HttpPage({super.key});
+  HttpPage({super.key});
+
+  final text = "".obs;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,7 @@ class HttpPage extends StatelessWidget {
         title: title,
         body: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             TDButton(
               text: "请求",
               isBlock: true,
@@ -24,8 +24,10 @@ class HttpPage extends StatelessWidget {
               onTap: () async {
                 String str = await _doGet();
                 print(str);
+                text.value = str;
               },
-            )
+            ),
+            Obx(() => TDText(text.value))
           ],
         ));
   }

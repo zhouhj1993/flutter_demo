@@ -36,10 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   dio: ^5.3.2
-  tdesign_flutter:
-    git:
-      url: https://github.com/TDesignOteam/tdesign-flutter.git
-      path: tdesign-component
+  tdesign_flutter: ^0.1.2
 
 
 dev_dependencies:
