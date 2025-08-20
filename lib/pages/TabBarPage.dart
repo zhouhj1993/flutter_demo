@@ -34,10 +34,10 @@ class TabBarPage extends StatelessWidget {
                 outlineType: TDBottomTabBarOutlineType.filled,
                 navigationTabs: appItems
                     .map((appItem) => TDBottomTabBarTabConfig(
-                        onTap: () =>
-                            onTapTab(context, appItem.label, appItem.index),
-                        iconTextTypeConfig:
-                            _buildTabConfig(context, appItem, 20)))
+                        onTap: () => onTapTab(context, appItem.label, appItem.index),
+                        tabText: appItem.label,
+                        selectedIcon: _buildSelectedIcon(context, appItem),
+                        unselectedIcon: _buildSelectedIcon(context, appItem)))
                     .toList()),
 
             ///普通item选中样式
@@ -46,31 +46,32 @@ class TabBarPage extends StatelessWidget {
                 outlineType: TDBottomTabBarOutlineType.filled,
                 navigationTabs: appItems
                     .map((appItem) => TDBottomTabBarTabConfig(
-                        onTap: () =>
-                            onTapTab(context, appItem.label, appItem.index),
-                        iconTextTypeConfig:
-                            _buildTabConfig(context, appItem, 20)))
+                        onTap: () => onTapTab(context, appItem.label, appItem.index),
+                        tabText: appItem.label,
+                        selectedIcon: _buildSelectedIcon(context, appItem),
+                        unselectedIcon: _buildSelectedIcon(context, appItem)))
                     .toList()),
+
             ///关联ViewPager
             tabsController.viewPager
           ],
         ));
   }
 
-  IconTextTypeConfig _buildTabConfig(
-      BuildContext context, _AppItem appItem, double iconSize) {
-    return IconTextTypeConfig(
-        tabText: appItem.label,
-        selectedIcon: Icon(
-          appItem.icon,
-          size: iconSize,
-          color: TDTheme.of(context).brandNormalColor,
-        ),
-        unselectedIcon: Icon(
-          appItem.icon,
-          size: iconSize,
-          color: TDTheme.of(context).fontGyColor1,
-        ));
+  Icon _buildSelectedIcon(BuildContext context, _AppItem appItem) {
+    return Icon(
+      appItem.icon,
+      size: 20,
+      color: TDTheme.of(context).brandNormalColor,
+    );
+  }
+
+  Icon _buildUnselectedIcon(BuildContext context, _AppItem appItem) {
+    return Icon(
+      appItem.icon,
+      size: 20,
+      color: TDTheme.of(context).fontGyColor1,
+    );
   }
 }
 

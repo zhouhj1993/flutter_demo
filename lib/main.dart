@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_demo/pages/HomePage.dart';
@@ -13,6 +15,17 @@ void main() {
     systemNavigationBarColor: Colors.transparent,
     systemNavigationBarDividerColor: Colors.transparent,
   ));
+
+  // 配置 GetX 日志
+  Get.config(
+    enableLog: true,
+    logWriterCallback: (text, {bool isError = false}) {
+      // 确保日志以 UTF-8 输出
+      final encodedText = utf8.encode(Uri.decodeComponent(text));
+      debugPrint(utf8.decode(encodedText));
+    },
+    defaultTransition: Transition.cupertino
+  );
 }
 
 class MyApp extends GetMaterialApp {
@@ -20,9 +33,7 @@ class MyApp extends GetMaterialApp {
 
   @override
   Widget build(BuildContext context) {
-    final theme = ThemeData(
-        colorScheme:
-            ColorScheme.light(primary: TDTheme.of(context).brandNormalColor));
+    final theme = ThemeData(colorScheme: ColorScheme.light(primary: TDTheme.of(context).brandNormalColor));
     return TDTheme(
         data: TDThemeData.defaultData(),
         child: GetMaterialApp(
